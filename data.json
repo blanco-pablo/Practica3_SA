@@ -1,0 +1,59 @@
+[
+    {
+        "ID":1,
+        "restaurante": "Campero",
+        "Combo": 1,
+        "Descripcion":"Una pieza, papas y agua",
+        "precio":35        
+    },
+    {
+        "ID":2,
+        "restaurante": "Campero",
+        "Combo": 2,
+        "Descripcion":"Dos pieza, papas y agua",
+        "precio":45        
+    },
+    {
+        "ID":3,
+        "restaurante": "Campero",
+        "Combo": 3,
+        "Descripcion":"Tres pieza, papas y agua",
+        "precio":75        
+    },
+    {
+        "ID":4,
+        "restaurante": "Campero",
+        "Combo": 4,
+        "Descripcion":"Familiar",
+        "precio":150
+    },
+    {
+        "ID":5,
+        "restaurante": "Taco Bell",
+        "Combo": 1,
+        "Descripcion":"Burrito + Agua + papas",
+        "precio":25
+    },
+    {
+        "ID":6,
+        "restaurante": "Taco Bell",
+        "Combo": 2,
+        "Descripcion":"Chalupa + Agua + papas",
+        "precio":29
+    },    
+    {
+        "ID":7,
+        "restaurante": "Taco Bell",
+        "Combo": 3,
+        "Descripcion":"Taco + Agua + papas",
+        "precio":30
+    },    
+    
+    {
+        "ID":8,
+        "restaurante": "Taco Bell",
+        "Combo": 4,
+        "Descripcion":"Familiar",
+        "precio":125
+    }
+]
