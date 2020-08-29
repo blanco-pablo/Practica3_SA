@@ -88,7 +88,7 @@ npm install
 
 3. Ejecutar
 ```bash
-node index.js
+npm start
 ```
 4. En el navegador abrir:
     * CLIENTE: http://localhost:3000/
