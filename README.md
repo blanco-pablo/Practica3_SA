@@ -1,15 +1,17 @@
-# Practica 3 - 201504242
+# Practica 4  - 201504242
 
 ## Autor ✒️
 
 * **Pablo Javier Blanco Calderon** - *201504242* - [blanco-pablo](https://github.com/blanco-pablo)
-* LINK dek video: https://drive.google.com/file/d/1W7Vqicd-Qi5OxClYYw6e7TkttjdSJqSp/view?usp=sharing
+* LINK dek video: 
 
 
 
 ## Restricciones 🚀
 
-* Realizar una aplicación SOA para simular un servicio de crowdsourcing de comida a domicilio.
+* Tomar la [práctica #3](https://github.com/blanco-pablo/Practica3_SA/tree/master), crear una nueva rama y realizarla ahora utilizando un ESB como orquestador de servicios. >> https://github.com/blanco-pablo/Practica3_SA/tree/master
+
+* El ESB puede ser único, pero debe ser capaz de intermediar todas las comunicaciones.
 
 * 3 microservicios
 
