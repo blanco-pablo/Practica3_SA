@@ -39,6 +39,34 @@ app.post('/addPedido', function (req, res) {
     });
 });
 
+//Metodo POST
+//Restaurante - Repartidor
+app.post('/addRepartidor', function (req, res) {     
+    
+    var datos = req.body;
+    var optionsRestaurante = {
+        hostname: '127.0.0.1',
+        url: 'http://localhost:8080/ingreso',
+        port: 8000,
+        path: '/ingreso',
+        method: 'POST',
+        json: datos
+    }
+    request(optionsRestaurante, function(err, re, body){
+        if (err) { 
+            res.status(200).send("ERROr");
+        }
+        if(body.status == 200){
+            res.status(200).send("OK");
+        }
+        else{
+            res.status(200).send("Error");
+        }
+        
+    });
+});
+
+
 
 //Puerto 433 donde se inicia el server
 app.listen(443, function () {

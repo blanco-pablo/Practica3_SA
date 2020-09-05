@@ -3,7 +3,7 @@
 ## Autor ✒️
 
 * **Pablo Javier Blanco Calderon** - *201504242* - [blanco-pablo](https://github.com/blanco-pablo)
-* LINK dek video: 
+* __LINK__ dek video: https://drive.google.com/file/d/10zIaABMXfaKyMjsoRIMY8C6IerP8OHQ4/view?usp=sharing
 
 
 
@@ -66,9 +66,10 @@ npm -v
 ```
 # Uso 🛠️
 
-1. Clonar el repositorio: https://github.com/blanco-pablo/Practica3_SA 
+1. Clonar la rama Practica4_SA del repositorio: https://github.com/blanco-pablo/Practica3_SA
 ```bash
-git clone https://github.com/blanco-pablo/Practica3_SA
+git clone --branch Practica4_SA https://github.com/blanco-pablo/Practica3_SA
+
 ```
 * Entre a la carpeta que quiere ejecutar:
 ```bash
@@ -79,6 +80,9 @@ cd '.\Repartidor\'
 ```
 ```bash
 cd '.\Restaurante\'
+```
+```bash
+cd '.\ESB\'
 ```
 2. Correr el comando para descargar las dependencias especificadas en el package.json
 ```bash
@@ -91,11 +95,50 @@ npm install
     * "jade": "^1.11.0", documentacion [aqui](https://www.npmjs.com/package/express-jade)
     * "request": "^2.88.2", documentacion [aqui](https://expressjs.com/es/api.html)
 
-3. Ejecutar
+3. Ejecutar en cada carpeta
 ```bash
 npm start
 ```
 4. En el navegador abrir:
     * CLIENTE: http://localhost:3000/
-    * RESTAURANTE: http://localhost:8000/pedidos
+    * RESTAURANTE: http://localhost:8000/
     * REPARTIDOR: http://localhost:8080/
+    * ESB: http://localhost:443
+
+---
+
+
+# ESB
+
+| URL | METODO | SEND | RESPONDSE |
+|-----|--------|------|-----------|
+| http://localhost:443/addPedido| POST | json | "OK" |
+| http://localhost:443/addRepartidor | POST | json | "OK" |
+
+* JSON SEND __/addpedido__
+```json
+{
+    "ID": int,
+    "restaurante": "string",
+    "Combo": int,
+    "Descripcion": "string",
+    "precio": int
+}
+```
+
+* JSON SEND __/addRepartidor__
+```json
+{
+    "conta": int,
+    "pedido":
+        {
+            "ID": int,
+            "restaurante": "string",
+            "Combo": int,
+            "Descripcion": "string",
+            "precio": int
+        },
+    "hora": DATE,
+    "estado": Pediente/Entregado
+}
+```
