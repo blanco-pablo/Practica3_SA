@@ -1,11 +1,31 @@
 html(lang="en")
 	head
-		title Tarea 3 - 201504242
+		title Restaurante - Practica 4
 		meta(charset="UTF-8")
 		link(rel="stylesheet" type="text/css" href="public/css/style.css")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 	body
-		h1 Combos Para Comprar
+		//FORMULARIO PARA AGREGAR COMBOS
+		h1 Agregar Combo para Venta
+		form(action="/", method="post")
+			label(style="color:blue; font-size: 20px;") Restaurante: 
+			input(type="text" name="restaurante" id="restaurante" placeholder="Nombre (String)")
+			br
+			label(style="color:blue; font-size: 20px;") No Combo: 
+			input(type="text" name="Combo" id="Combo" placeholder="Combo (Numero)")
+			br
+			label(style="color:blue; font-size: 20px;") Descripcion: 
+			input(type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion (String)")
+			br
+			label(style="color:blue; font-size: 20px;") Precio: 
+			input(type="text" name="precio" id="precio" placeholder="Precio (Numero)")
+			br
+			br
+			input(type="submit" class="btn" value="AGREGAR")
+			h4= msm
+		
+		//COMBOS AGREGADOS PARA VENTA
+		h1 Combos Para Venta
 		table(border="3px")
 			tr
 				th ID
@@ -20,7 +40,3 @@ html(lang="en")
 					td #{user.Combo}
 					td #{user.Descripcion}
 					td #{user.precio}
-		h1 Pedir Combo por ID
-			form(action="/pedir", method="post")
-				input(type="text" name="id" id="id" placeholder="ID (Numero)")
-				input(type="submit" class="btn" value="Pedir")

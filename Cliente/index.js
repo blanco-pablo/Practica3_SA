@@ -2,8 +2,7 @@ var express = require('express');
 var path = require('path');
 const fs = require('fs');
 const request = require('request');
-let rawdata = fs.readFileSync('../data.json');
-let json = JSON.parse(rawdata);
+
 var pedidos = [];
 //SERVER
 var app = express();
@@ -21,15 +20,24 @@ app.use("/public",express.static(path.join(__dirname,'/public')));
 
 
 //Metodo GET para renderizar el formulario
-app.get('/', function (req, res) {     
-    res.render('home', { userlist : json , msm:'',pedidos : pedidos});
+app.get('/', function (req, res) {    
+    let rawdata = fs.readFileSync('../data.json');
+    let json = JSON.parse(rawdata); 
+    let rawdata2 = fs.readFileSync('../pedidos.json');
+    let json2 = JSON.parse(rawdata2); 
+    res.render('home', { userlist : json , msm:'',pedidos : json2});
 });
 
 //Metodo POST para pedir
 app.post('/', function (req, res) { 
+    let rawdata = fs.readFileSync('../data.json');
+    let json = JSON.parse(rawdata); 
+    let rawdata2 = fs.readFileSync('../pedidos.json');
+    pedidos = JSON.parse(rawdata2); 
+    var datos = {};
     for (let key in json) {
         if (json[key].ID == req.body.id) {
-            var datos = {
+            datos = {
                 ID: json[key].ID,
                 restaurante: json[key].restaurante,
                 Combo: json[key].Combo,
@@ -42,24 +50,18 @@ app.post('/', function (req, res) {
     
     var options = {
         hostname: '127.0.0.1',
-        url: 'http://localhost:8000/ingreso',
-        port: 8000,
-        path: '/ingreso',
+        url: 'http://localhost:443/addPedido',
+        port: 443,
+        path: '/addPedido',
         method: 'POST',
         json: datos
     }
     
     request(options, function(err, re, body){
         if (err) { 
-            res.render('home', { userlist : json, msm:'ERROR' ,pedidos : pedidos});
+            res.render('home', { userlist : json, msm:'ERROR1' ,pedidos : pedidos});
         }
-        if(body.status == 200){
-            pedidos = body.pedido;
-            res.render('home', { userlist : json, msm:'Ingreso Correcto' ,pedidos : pedidos});
-        }
-        else{
-            res.render('home', { userlist : json, msm:'ERROR', pedidos : pedidos});
-        }
+        res.render('home', { userlist : json, msm:'Ingreso Correcto', pedidos : pedidos});
         
     });
 });

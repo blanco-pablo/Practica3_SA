@@ -1,12 +1,13 @@
 html(lang="en")
 	head
-		title Tarea 3 - 201504242
+		title Cliente - Practica 4
 		meta(charset="UTF-8")
 		link(rel="stylesheet" type="text/css" href="public/css/style.css")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 	body
 		h1 Cliente
 		h1 * Combos Para Comprar
+		//TABLA GENERAL DE COMPRA
 		table(border="1px")
 			tr
 				th ID
@@ -21,11 +22,13 @@ html(lang="en")
 					td #{user.Combo}
 					td #{user.Descripcion}
 					td #{user.precio}
+		//FORMULARIO PARA PEDIR COMBO
 		h1 * Pedir Combo por ID
 			form(action="/", method="post")
 				input(type="text" name="id" id="id" placeholder="ID (Numero)")
 				input(type="submit" class="btn" value="Pedir")
 			h4= msm
+		// TABLA DE PEDIDOS REALIZADOS
 		h1 * Pedidos realizados 
 		table(border="1px")
 			tr

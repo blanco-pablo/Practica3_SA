@@ -1,13 +1,39 @@
 * {
     box-sizing: border-box;
   }
-  
-  input[type=text]{
-    width: 10%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
+  h1 {
+    color: #183ea8;
+    text-align: center;
+    font-weight: normal;
+    font-size: 40px;
+    font-family: Arial;
+    text-transform: uppercase;
+    }
+    table{
+      margin:auto;
+    }
+  form{
+    width:400px;
+    padding:16px;
+    border-radius:10px;
+    margin:auto;
+    background-color:#ccc;
+  }
+
+  form label{
+    width:150px;
+    font-weight:bold;
+    display:inline-block;
+  }
+
+  form input[type="text"]{
+    width:180px;
+    padding:3px 10px;
+    border:1px solid #f6f6f6;
+    border-radius:3px;
+    background-color:#f6f6f6;
+    margin:8px 0;
+    display:inline-block;
   }
   
   label {
